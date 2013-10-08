@@ -1,0 +1,13 @@
+{
+    "fooga" : "/wooga.js",
+    "booga" : [
+        "nooga.js",
+        1,
+        "tooga"
+    ],
+    "googa" : {
+        "looga" : true,
+        "yooga" : null,
+        "jooga" : "/rooga/dooga/vooga.txt"
+    }
+}
