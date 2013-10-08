@@ -1,14 +1,9 @@
-JS Prefixer
+JS Prefixer [![Build Status](https://travis-ci.org/tivac/node-js-prefixer.png?branch=master)](https://travis-ci.org/tivac/node-js-prefixer) [![NPM version](https://badge.fury.io/js/js-prefixer.png)](http://badge.fury.io/js/js-prefixer) [![Dependency Status](https://gemnasium.com/tivac/node-js-prefixer.png)](https://gemnasium.com/tivac/node-js-prefixer)
 ==========
 
 Prefix relative URLs in JavaScript & JSON code with a cdn URL.
 
 Turns `var a = "/fooga.js";` into `var a = "http://woogabooga.com/fooga.js"`;
-
-
-[![Build Status](https://travis-ci.org/tivac/node-js-prefixer.png?branch=master)](https://travis-ci.org/tivac/node-js-prefixer)
-[![NPM version](https://badge.fury.io/js/js-prefixer.png)](http://badge.fury.io/js/js-prefixer)
-[![Dependency Status](https://gemnasium.com/tivac/node-js-prefixer.png)](https://gemnasium.com/tivac/node-js-prefixer)
 
 ## Usage ##
 
