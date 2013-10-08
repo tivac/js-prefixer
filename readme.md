@@ -3,6 +3,7 @@ JS Prefixer
 
 Prefix relative URLs in JavaScript & JSON code with a cdn URL.
 
+Turns `var a = "/fooga.js";` into `var a = "http://woogabooga.com/fooga.js"`;
 
 
 [![Build Status](https://travis-ci.org/tivac/node-js-prefixer.png?branch=master)](https://travis-ci.org/tivac/node-js-prefixer)
@@ -12,14 +13,15 @@ Prefix relative URLs in JavaScript & JSON code with a cdn URL.
 ## Usage ##
 
 ```javascript
-var prefixer = require("js-prefixer");
+var prefixer = require("js-prefixer"),
+	code     = "var fooga = \"/googa/nooga.txt\";";
 
 prefixr(code, { prefix : "//abcdefg123.cloudfront.net" }, function(err, src) {
     if(err) {
         throw new Error(err);
     }
     
-    console.log(src);
+    console.log(src); // writes out: var fooga = "//abcdefg123.cloudfront.net/googa/nooga.txt";
 });
 ```
 

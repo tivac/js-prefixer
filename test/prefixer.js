@@ -65,10 +65,30 @@ describe("JS Prefixer", function() {
                     assert.ifError(err);
                     
                     assert(code.indexOf("/* woop a boop */") > -1);
+                    
                     assert(code.indexOf("//f.com/fooga/booga.js") > -1);
-                    assert(code.indexOf("//f.com/nooga.js") > -1);
                     assert(code.indexOf("//f.com/tooga.js") > -1);
+                    
+                    assert(code.indexOf("\"nooga.js") > -1);
                     assert(code.indexOf("\"wooga nooga googa") > -1);
+                    
+                    done();
+                }
+            );
+        });
+        
+        it("should update strings in complex JS", function(done) {
+            prefixer(
+                fs.readFileSync(
+                    "./test/specimens/complex.js",
+                    { encoding : "utf8" }
+                ),
+                { prefix : "//f.com" },
+                function(err, code) {
+                    assert.ifError(err);
+                    
+                    assert(code.indexOf("vb = \"//f.com/fooga.js\"") > -1);
+                    assert(code.indexOf("n.url = \"http://g.com/vooga\";") > -1);
                     
                     done();
                 }
@@ -92,10 +112,10 @@ describe("JS Prefixer", function() {
                     );
                     
                     assert(code.indexOf("//f.com/wooga.js") > -1);
-                    assert(code.indexOf("//f.com/nooga.js") > -1);
                     assert(code.indexOf("//f.com/rooga/dooga/vooga.txt") > -1);
                     
                     assert(code.indexOf("\"tooga") > -1);
+                    assert(code.indexOf("\"nooga.js") > -1);
                     
                     done();
                 }
