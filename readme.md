@@ -12,12 +12,12 @@ Prefix relative URLs in JavaScript code with a cdn URL
 ```javascript
 var prefixer = require("js-prefixer");
 
-prefixr(code, { prefix : "//abcdefg123.cloudfront.net" }, function(err, text) {
+prefixr(code, { prefix : "//abcdefg123.cloudfront.net" }, function(err, src) {
     if(err) {
         throw new Error(err);
     }
     
-    console.log(text.toString("utf8"));
+    console.log(src);
 });
 ```
 
@@ -25,12 +25,13 @@ prefixr(code, { prefix : "//abcdefg123.cloudfront.net" }, function(err, text) {
 
 ### prefixer(code, [options], cb)
 
-* `code` {String} JS code string
-* `options` {Object}
-* `cb` {Function}
-  * `err` {Error | null}
-  * `text` {String} Rewritten text
+* `code` _{String}_ JS code string
+* `options` _{Object}_
+* `cb` _{Function}_
+  * `err` _{Error | null}_
+  * `src` _{String}_ Code with cdn-prefixed URLs
 
 #### Options
 
-* `prefix` {String} URL used to prefix elements.
+* `prefix` _{String}_ URL used to prefix elements.
+* `codegen` _{Object}_ escodegen options (see `./codegen.json` for defaults & [escodegen docs](https://github.com/Constellation/escodegen/wiki/API#options) for descriptions)
