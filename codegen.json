@@ -1,0 +1,25 @@
+{
+    "format": {
+        "indent" : {
+            "style" : "    ",
+            "base"  : 0
+        },
+        
+        "json"        : false,
+        "renumber"    : false,
+        "hexadecimal" : false,
+        "quotes"      : "double",
+        "escapeless"  : true,
+        "compact"     : false,
+        "parentheses" : true,
+        "semicolons"  : true
+    },
+    
+    "parse"             : null,
+    "comment"           : true,
+    "sourceMap"         : null,
+    "sourceMapRoot"     : null,
+    "sourceMapWithCode" : false,
+    "directive"         : false,
+    "verbatim"          : null
+}
