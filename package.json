@@ -1,8 +1,8 @@
 {
   "name": "js-prefixer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Prefix urls in javascript code with a cdn URL",
-  "main": "./lib/prefix.js",
+  "main": "./lib/prefixer.js",
   "scripts": {
     "test": "istanbul test --print both ./node_modules/mocha/bin/_mocha"
   },
