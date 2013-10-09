@@ -121,5 +121,32 @@ describe("JS Prefixer", function() {
                 }
             );
         });
+        
+        it("should update strings in complex JSON", function(done) {
+             prefixer(
+                fs.readFileSync(
+                    "./test/specimens/complex.json",
+                    { encoding : "utf8" }
+                ),
+                { prefix : "//f.com" },
+                function(err, code) {
+                    assert.ifError(err);
+                    
+                    assert.doesNotThrow(
+                        function() {
+                            JSON.parse(code);
+                        }
+                    );
+                    
+                    assert(code.indexOf("//f.com/wooga.js") > -1);
+                    assert(code.indexOf("//f.com/rooga/dooga/vooga.txt") > -1);
+                    
+                    assert(code.indexOf("\"tooga") > -1);
+                    assert(code.indexOf("\"nooga.js") > -1);
+                    
+                    done();
+                }
+            );
+        });
     });
 });
