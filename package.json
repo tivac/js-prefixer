@@ -1,6 +1,6 @@
 {
   "name": "js-prefixer",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Prefix urls in javascript code with a cdn URL",
   "main": "./lib/prefixer.js",
   "scripts": {
