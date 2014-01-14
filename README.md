@@ -35,6 +35,7 @@ prefixer(code, { prefix : "//abcdefg123.cloudfront.net" }, function(err, src) {
 
 * `prefix` _{String}_ URL used to prefix elements.
 * `codegen` _{Object}_ escodegen options (see `./codegen.json` for defaults & [escodegen docs](https://github.com/Constellation/escodegen/wiki/API#options) for descriptions)
+* `list` _{Array}_ Array of strings to be replaced (will be used instead of scanning for valid-looking URIs)
 
 ## Caveats ##
 

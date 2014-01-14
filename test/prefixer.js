@@ -41,10 +41,7 @@ describe("JS Prefixer", function() {
         
         it("should return an error on invalid JS", function(done) {
             prefixer(
-                fs.readFileSync(
-                    "./test/specimens/invalid.js",
-                    { encoding : "utf8" }
-                ),
+                fs.readFileSync("./test/specimens/invalid.js", "utf8"),
                 { prefix : "//f.com" },
                 function(err, code) {
                     assert(err);
@@ -56,10 +53,7 @@ describe("JS Prefixer", function() {
         
         it("should update strings & maintain comments", function(done) {
             prefixer(
-                fs.readFileSync(
-                    "./test/specimens/simple.js",
-                    { encoding : "utf8" }
-                ),
+                fs.readFileSync("./test/specimens/simple.js", "utf8"),
                 { prefix : "//f.com" },
                 function(err, code) {
                     assert.ifError(err);
@@ -79,10 +73,7 @@ describe("JS Prefixer", function() {
         
         it("should update strings in complex JS", function(done) {
             prefixer(
-                fs.readFileSync(
-                    "./test/specimens/complex.js",
-                    { encoding : "utf8" }
-                ),
+                fs.readFileSync("./test/specimens/complex.js", "utf8"),
                 { prefix : "//f.com" },
                 function(err, code) {
                     assert.ifError(err);
@@ -97,10 +88,7 @@ describe("JS Prefixer", function() {
         
         it("should update strings in JSON", function(done) {
              prefixer(
-                fs.readFileSync(
-                    "./test/specimens/simple.json",
-                    { encoding : "utf8" }
-                ),
+                fs.readFileSync("./test/specimens/simple.json", "utf8"),
                 { prefix : "//f.com" },
                 function(err, code) {
                     assert.ifError(err);
@@ -124,10 +112,7 @@ describe("JS Prefixer", function() {
         
         it("should update strings in complex JSON", function(done) {
              prefixer(
-                fs.readFileSync(
-                    "./test/specimens/complex.json",
-                    { encoding : "utf8" }
-                ),
+                fs.readFileSync("./test/specimens/complex.json", "utf8"),
                 { prefix : "//f.com" },
                 function(err, code) {
                     assert.ifError(err);
@@ -144,6 +129,21 @@ describe("JS Prefixer", function() {
                     assert(code.indexOf("\"tooga") > -1);
                     assert(code.indexOf("\"nooga.js") > -1);
                     
+                    done();
+                }
+            );
+        });
+
+        it("should only update items that exist in the list", function(done) {
+            prefixer(
+                fs.readFileSync("./test/specimens/simple.js", "utf8"),
+                { prefix : "//f.com", list : [ "/fooga/booga.js" ] },
+                function(err, code) {
+                    assert(code.indexOf("//f.com/fooga/booga.js") > -1);
+                    
+                    assert(code.indexOf("\"nooga.js") > -1);
+                    assert(code.indexOf("\"/tooga.js") > -1);
+
                     done();
                 }
             );
