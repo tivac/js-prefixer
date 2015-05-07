@@ -1,4 +1,3 @@
-/*jshint node:true */
 "use strict";
 
 var fs     = require("fs"),
@@ -17,26 +16,6 @@ describe("JS Prefixer", function() {
                 
                 done();
             });
-        });
-        
-        it("should use passed codegen options", function(done) {
-            prefixer(
-                "var a; //fooga",
-                {
-                    prefix  : "//f.com",
-                    codegen : {
-                        comment : false
-                    }
-                },
-                function(err, code) {
-                    assert.ifError(err);
-                    
-                    // NOTE: comments should be removed
-                    assert.equal(code, "var a;");
-                    
-                    done();
-                }
-            );
         });
         
         it("should return an error on invalid JS", function(done) {
