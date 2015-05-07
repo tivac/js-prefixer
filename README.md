@@ -34,9 +34,8 @@ prefixer(code, { prefix : "//abcdefg123.cloudfront.net" }, function(err, src) {
 #### Options
 
 * `prefix` _{String}_ URL used to prefix elements.
-* `codegen` _{Object}_ escodegen options (see `./codegen.json` for defaults & [escodegen docs](https://github.com/Constellation/escodegen/wiki/API#options) for descriptions)
 * `list` _{Array}_ Array of strings to be replaced (will be used instead of scanning for valid-looking URIs)
 
 ## Caveats ##
 
-Support for JSON is enabled within esprima by attempting to `JSON.parse` incoming code, then modifying it by prepending `var ___jsprefixer___ = ` to it so it parses as valid JavaScript. This may have unintended side-effects and hasn't been thoroughly tested against real-world JSON.
+Support for JSON is enabled by prepending it with `var ___jsprefixer___ = ` so it parses as valid JavaScript. This may have unintended side-effects but hasn't been a problem for us in the last year+ of daily usage.
