@@ -27,8 +27,7 @@
         "Form",
         "Location",
         "Features",
-        "Tracking",
-        
+        "Tracking"
     ],
     
     "testServices": [
@@ -43,30 +42,24 @@
                 
                 { "link" : "/logout",       "troll" : "logout" },
                 
-                // OAuth2
                 { "link" : [ "/oauth2/token", "/token" ], "troll" : "oauth2_token",              "methods" : "post" },
                 { "link" :   "/oauth2/authorization",     "troll" : "oauth2_authorization" },
                 { "link" :   "/oauth2/authorization",     "troll" : "oauth2_authorization_post", "methods" : "post" },
                 { "link" :   "/oauth2/error",             "troll" : "oauth2_error" },
 
-                // Verification/Whitelisting
                 { "link" : "/verify",            "troll" : "email_verify" },
                 
                 { "link" : "/whitelist",         "troll" : "whitelist" },
                 { "link" : "/whitelist",         "troll" : "whitelist_post", "methods" : "post" },
                 { "link" : "/whitelist/:result", "troll" : "whitelist_result" },
                 
-                // Account Recovery
                 { "link" : "/recovery",                      "troll" : "recovery" },
                 { "link" : "/recovery",                      "troll" : "recovery_post", "methods" : "post" },
                 { "link" : "/recovery/reset-password",       "troll" : "recovery_password_reset_post", "methods" : "post" },
                 { "link" : "/recovery/disable-auth2f",       "troll" : "recovery_disable_auth2f" },
                 { "link" : "/recovery/disable-auth2f",       "troll" : "recovery_disable_auth2f_post", "methods" : "post" },
                 
-                // Temporary redirects
-                // added 9/18/12
                 { "link" : "/download",     "redirect" : "/account/download", "code" : 301 },
-                // added 9/21/12
                 { "link" : "/allow-login",  "troll" : "login_allow_legacy" }
             ]
         }, {
@@ -107,32 +100,27 @@
 
                 { "link" : "/security",             "troll" : "security" },
                 
-                // Auth2f - Email Enable
                 { "link" : "/security/email",          "troll" : "security_email" },
                 { "link" : "/security/email/link",     "troll" : "security_email_link_post", "methods" : "post" },
                 { "link" : "/security/email/done",     "troll" : "security_email_done" },
                 
-                // Auth2f - TOTP Enable
                 { "link" : "/security/totp",        "troll" : "security_totp" },
                 { "link" : "/security/totp/link",   "troll" : "security_totp_link" },
                 { "link" : "/security/totp/link",   "troll" : "security_totp_link_post",    "methods" : "post" },
                 { "link" : "/security/totp/done",   "troll" : "security_totp_done" },
                 
-                // Auth2f - TOTP Disable
                 { "link" : "/security/totp/unlink",      "troll" : "security_totp_unlink" },
                 { "link" : "/security/totp/unlink",      "troll" : "security_totp_unlink_post",  "methods" : "post" },
                 { "link" : "/security/totp/unlink/done", "troll" : "security_totp_unlink_done" },
                 
                 { "link" : "/verify",                  "troll" : "verify" },
                 
-                // Link a new GW1 account w/ this GW2 account
                 { "link" : "/link",          "troll" : "link" },
                 { "link" : "/link",          "troll" : "link_post",         "methods" : "post" },
                 { "link" : "/link/approve",  "troll" : "link_approve" },
                 { "link" : "/link/approve",  "troll" : "link_approve_post", "methods" : "post" },
                 { "link" : "/link/cancel",   "troll" : "link_cancel" },
                 
-                // Manage created/allowed OAuth applications
                 { "link" : "/applications",     "troll" : "account_oauth_applications" },
                 { "link" : "/applications/:id", "troll" : "account_oauth_application" },
                 
