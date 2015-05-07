@@ -29,6 +29,20 @@ describe("JS Prefixer", function() {
                 }
             );
         });
+
+        it("should work on empty files", function(done) {
+            prefixer(
+                fs.readFileSync("./test/specimens/empty.js", "utf8"),
+                { prefix : "//f.com" },
+                function(err, code) {
+                    assert.ifError(err);
+                    
+                    assert(code.length === 0);
+
+                    done();
+                }
+            );
+        });
         
         it("should update strings & maintain comments", function(done) {
             prefixer(
