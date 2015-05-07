@@ -18,26 +18,6 @@ describe("JS Prefixer", function() {
             });
         });
         
-        it("should use passed codegen options", function(done) {
-            prefixer(
-                "var a; //fooga",
-                {
-                    prefix  : "//f.com",
-                    codegen : {
-                        comment : false
-                    }
-                },
-                function(err, code) {
-                    assert.ifError(err);
-                    
-                    // NOTE: comments should be removed
-                    assert.equal(code, "var a;");
-                    
-                    done();
-                }
-            );
-        });
-        
         it("should return an error on invalid JS", function(done) {
             prefixer(
                 fs.readFileSync("./test/specimens/invalid.js", "utf8"),
