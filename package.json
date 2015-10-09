@@ -20,7 +20,7 @@
     "istanbul": "~0.1.37"
   },
   "dependencies": {
-    "lodash": "~2.2.1",
+    "lodash": "~3.10.1",
     "rocambole": "^0.6.0"
   },
   "engines": {
