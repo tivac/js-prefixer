@@ -16,12 +16,12 @@
     "url": "https://github.com/tivac/node-js-prefixer/issues"
   },
   "devDependencies": {
-    "mocha": "~1.13.0",
-    "istanbul": "~0.1.37"
+    "mocha": "~2.3.3",
+    "istanbul": "~0.3.22"
   },
   "dependencies": {
-    "lodash": "~2.2.1",
-    "rocambole": "^0.6.0"
+    "lodash": "~3.10.1",
+    "rocambole": "^0.7.0"
   },
   "engines": {
     "node": ">=0.10"
