@@ -7,7 +7,6 @@ var fs     = require("fs"),
 
 describe("JS Prefixer", function() {
     describe("main fn", function() {
-        
         it("should handle no options", function(done) {
             prefixer("foo", function(err, code) {
                 assert.ifError(err);
@@ -22,7 +21,7 @@ describe("JS Prefixer", function() {
             prefixer(
                 fs.readFileSync("./test/specimens/invalid.js", "utf8"),
                 { prefix : "//f.com" },
-                function(err, code) {
+                function(err) {
                     assert(err);
                     
                     done();
@@ -80,7 +79,7 @@ describe("JS Prefixer", function() {
         });
         
         it("should update strings in JSON", function(done) {
-             prefixer(
+            prefixer(
                 fs.readFileSync("./test/specimens/simple.json", "utf8"),
                 { prefix : "//f.com" },
                 function(err, code) {
@@ -104,7 +103,7 @@ describe("JS Prefixer", function() {
         });
         
         it("should update strings in complex JSON", function(done) {
-             prefixer(
+            prefixer(
                 fs.readFileSync("./test/specimens/complex.json", "utf8"),
                 { prefix : "//f.com" },
                 function(err, code) {

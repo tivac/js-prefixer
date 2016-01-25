@@ -1,0 +1,9 @@
+{
+    "preset" : "arenanet",
+    "excludeFiles" : [
+        "coverage/**",
+        "test/specimens/**",
+        "test/results/**",
+        "test/output/**"
+    ]
+}
