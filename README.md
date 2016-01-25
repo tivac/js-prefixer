@@ -1,6 +1,11 @@
-js-prefixer
-==========
-[![Build Status](https://travis-ci.org/tivac/node-js-prefixer.png?branch=master)](https://travis-ci.org/tivac/node-js-prefixer) [![NPM version](https://badge.fury.io/js/js-prefixer.png)](http://badge.fury.io/js/js-prefixer) [![Dependency Status](https://gemnasium.com/tivac/node-js-prefixer.png)](https://gemnasium.com/tivac/node-js-prefixer)
+js-prefixer [![NPM Version](https://img.shields.io/npm/v/js-prefixer.svg)](https://www.npmjs.com/package/js-prefixer) [![Build Status](https://img.shields.io/travis/tivac/node-js-prefixer/master.svg)](https://travis-ci.org/tivac/node-js-prefixer)
+===========
+<p align="center">
+    <a href="https://www.npmjs.com/package/js-prefixer" alt="NPM License"><img src="https://img.shields.io/npm/l/js-prefixer.svg" /></a>
+    <a href="https://www.npmjs.com/package/js-prefixer" alt="NPM Downloads"><img src="https://img.shields.io/npm/dm/js-prefixer.svg" /></a>
+    <a href="https://david-dm.org/tivac/node-js-prefixer" alt="Dependency Status"><img src="https://img.shields.io/david/tivac/node-js-prefixer.svg" /></a>
+    <a href="https://david-dm.org/tivac/node-js-prefixer#info=devDependencies" alt="devDependency Status"><img src="https://img.shields.io/david/dev/tivac/node-js-prefixer.svg" /></a>
+</p>
 
 Prefix relative URLs in JavaScript & JSON code with a cdn URL.
 
