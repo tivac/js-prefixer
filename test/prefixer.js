@@ -140,5 +140,19 @@ describe("JS Prefixer", function() {
                 }
             );
         });
+        
+        it("should support template tags", function(done) {
+            prefixer(
+                fs.readFileSync("./test/specimens/template.js", "utf8"),
+                {
+                    prefix : "//f.com"
+                },
+                function(err, code) {
+                    assert(code.indexOf("//f.com/fooga/booga.js") > -1);
+                    
+                    return done();
+                }
+            );
+        });
     });
 });
