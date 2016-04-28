@@ -5,7 +5,7 @@
   "main": "./lib/prefixer.js",
   "scripts": {
     "cover": "istanbul test --print both ./node_modules/mocha/bin/_mocha",
-    "lint": "eslint . && jscs .",
+    "lint": "eslint .",
     "mocha": "mocha",
     "test": "npm run lint && mocha",
     "preversion": "npm test"
@@ -23,8 +23,6 @@
     "eslint": "^1.10.3",
     "eslint-config-arenanet": "^1.0.3",
     "istanbul": "^0.4.2",
-    "jscs": "^2.9.0",
-    "jscs-preset-arenanet": "^1.0.3",
     "mocha": "^2.3.4"
   },
   "dependencies": {
