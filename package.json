@@ -23,7 +23,7 @@
     "eslint": "^1.10.3",
     "eslint-config-arenanet": "^1.0.3",
     "istanbul": "^0.4.2",
-    "mocha": "^2.3.4"
+    "mocha": "^3.0.0"
   },
   "dependencies": {
     "rocambole": "^0.7.0"
