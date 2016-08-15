@@ -20,7 +20,7 @@
     "url": "https://github.com/tivac/node-js-prefixer/issues"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
+    "eslint": "^3.3.1",
     "eslint-config-arenanet": "^1.0.3",
     "istanbul": "^0.4.2",
     "mocha": "^3.0.0"
